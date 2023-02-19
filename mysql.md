@@ -89,9 +89,26 @@ The following are the some of the features of RDBMS :
 
 - We can have morethan one foreign key in a table.
 **Check:**--Check is a constraint, which is used to provide additional validation as per the customer requirement specification.
-<br>EX: Check9salary>0)
+<br>EX: Check(salary>0)
 
+**SQL Statements:**
+- DQL : Data query language
+- DDL : Data definition language
+- DML : Data manipulation language
+- TCL : Transaction control language
+- DCL : Data control language
 
+**DQL**
+
+SELECT    : It is used to retrieve the data from the database.
+
+**DDL**
+
+create : it is used to create a new table<br>
+Alter : It is used to modify the structure of the table<br>
+Rename : It is used to rename the table<br>
+Truncate :
+Drop :
 
 ## why are we using MYSQL ?
 - free and opensource
