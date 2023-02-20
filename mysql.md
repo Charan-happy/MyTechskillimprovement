@@ -107,8 +107,145 @@ SELECT    : It is used to retrieve the data from the database.
 create : it is used to create a new table<br>
 Alter : It is used to modify the structure of the table<br>
 Rename : It is used to rename the table<br>
-Truncate :
-Drop :
+Truncate : It is a sql command that removes all rows from a table without deleting the table structure or any associated objects like indexes, constraints or triggers. in short, it resets the table to its original state, with no data in it. it can't be undone. as it permanently deletes all data in the table. `$ truncate table <tablename>;`<br>
+Drop : It is a sql command that deletes an entire table, including its structure and all associated objects like indexes, constraints or triggers. This operation is irreversible and permanently deletes the table and its data from the database. `$ DROP table <tablename>;`<br>
+**DML** :
+
+Insert : It is used to insert records into the table<br>
+Update : it is used to modify records in the table<br>
+Delete : It is used to delete the records from the table<br>
+
+**TCL**
+
+commit : It is used to save DML changes
+Rollback : it is used to restore earlier values
+savepoint : It is used to save the statement names
+
+**DCL**
+
+Grant : It is used to give permission to access or privilege to user<br>
+Revoke : It is used to take back the permission given to the user.
+
+
+**commands:**
+
+>`$ show user `-- command to display the current user<br>
+`$ clear screen/cl scr `--clear the screen<br>
+`$ exit`-- exit the application<br>
+`$ select * from tab;`--To display list of tables, which are present in the current user<br>
+`$ Describe EMP/ desc emp;`-- used to give details about employee table<br>
+`$ show line size/page size `--to show the line size/page size<br>
+`$ set line size/page size `--to set the line size/page size<br>
+`$ select * from table;` -- To show the complete table specified.
+
+**Projection:**: It is the process of selecting and retrieving specific columns from a table. when performing a projection, only the specific columns are returned in the result set, which can make the query more effecient by reducing the amount of data that needs to be processed.
+syntax : `select column1, column2 from <table-name>;`<br>
+**Distinct:** It is a keyword used in sql query to remove duplicates from the result set. when a query uses distinct, only one instance of each distinct value in the specified columns is returned in the result set.In short, It will be used to display only the unique values from the column of the table.syntax:`select distinct column_name from table_name`<br>
+**expression** It is a combination of one or more values, operators, and SQL functions that can be evaluated to produce a  single value. Expressions are often used in sql queries to perform calculations or to manipulate data before it is returned in the result set. Expressions can include mathematical operations, string operations, and logical operations as well as functions like SUM, AVG, and MAX
+syntax : `SELECT column1 + column2 AS sum FROM table_name;`
+
+**Dual:** It is a dummy table used for independent calculation or operation<br>
+**Alias:**It is the alternative name given to the column heading. 
+- Alias name should mention next to the column name.Between column name and alias name, we can use 'as' keyword but not mandatory. 
+- alias should enclosed by double quotes, if it is having special characters.
+- underscore can be considered as character in alias rather than as special character.<br>
+EX: select ename employee name from emp;  Incorrect<br>
+select ename employee_name from emp;     correct <br>
+select ename "employee name" from emp;   correct <br>
+
+**literals:** literals can be number / character/ data.
+- literals are all case sensitive
+- if literals is a number, then no need to enclosing that within the single quotes
+- if the literals are character /date, then it should be enclosed by single quotes.
+
+**concatenation:** it is used to join two strings of data.
+- concatenation represented in two vertical bars (||)
+
+**edit command:** Edit command is used to modify the previous query.<br>'ED' can also be used instead of 'EDIT'.
+
+// write a query to display employee name, salary, annual salary of all the employees.
+
+`$ select ename, sal, sal*12 annual_sal from emp;`
+
+list command -- list is used to display the previously executed sql statements.`$ list`
+<br>
+save command: -- It is used to save the previously executed query.<br>
+Replace command : Replace is used to overwrite the existing document.<br>
+append command : It is used to append/fetch the saved one.
+<br>spooling: spooling is the process of saving the output of sql query to a file, usually for further processing or analysis. when you spool the output of a query, the result set is written to a file in a specific format that can be easily read and processed by other programs.<br>
+
+`$ SQL> SPOOL output.txt<br>SQL> SELECT * FROM employees;<br>SQL> SPOOL OFF`
+
+**sql * plus**: sql * plus is client tool installed along with database.<br>It has specific set of commands<br>It acts as an inteface between user and database.
+
+Differences between SQL and SQL * plus
+||SQL | SQL * PLUS |
+|-----|-----|----|
+|1| SQL is standard language to communicate with the database| SQL * plus is an environment, which supports write and execute queries |
+|2|SQL is ANSIC standard | It belongs to oracle proprietary (tool developed by oracle) |
+|3| In SQL, semicolon; is mandatory| In SQL * plus semicolon(;) is not mandatory |
+|4|SQL commands cannot be abbreviated <br>Ex: select<br>create<br>update<br>delete| sql * plus commands can be abbreviated<br>EX: cl scr(clear screen)<br>ed (edit)etc|
+|SQL commands can manipulate tables and data definitions| we cannot manipulate tables and definitions |
+
+**operators**-- operators are the symbols used to perform some specific operations.<br>operands: these are the inputs required for the operations<br>
+**Types of operators:**
+
+-> Arithmetic operators (+,-,*,/,----)<br>
+-> Comparision or Relational operators(>,<,>=,<=,!=,-->)<br>
+-> logical operator (AND, OR, NOT)<br>
+-> special operators (is, like, in ,between, having ----)
+
+`$ Select * / {[distinct]Expression /column_name [alias]}<br>From <table_name><br>Where <condition/s>;`
+
+--> select * from emp;
+// write a query to display list of all employees, where salary is greater than 1000
+
+` $ select * from emp where sal>2000;` 
+
+// write a query to list all the details of employees, who are working as manager
+
+`$ selct * from emp where job='MANAGER';`
+
+// write a query to display all the employees, who are working in the department 20 and working as salesman
+
+`$ select * from emp where deptno=20 and job='SALESMAN`
+
+//write a query to display all the list of employees, who are working as manager and salary > 2000 and works in the department 30.
+
+`$ select * from emp where job='MANAGER' and sal>2000 and deptno = 30;`
+
+// write a query to display salary of scott.
+`$ select SAL from emp where ename='scott'`;
+
+// write a query to display the list of employee, who are working in the department 10,20 & 30.
+
+`$ select * from emp where deptno=10 or deptno=20 or deptno=30;`
+
+// write a query to display the list of employees who are working as clerk or salesman or analyst
+
+`$ select * from emp where job='CLERK' or job='MANAGER' or job = 'ANALYST';`
+
+**IN operator:** Instead of using multiple 'or' operators, we are using IN operator.
+syntax: `$ select <column-list> from <table_name> where column_name in (v1,v2,v3,---); 
+
+// write a query to display the list of employees, who are working as clerk, salesman and analyst
+
+`$ select * from emp where job in ('CLERK', 'SALESMAN','ANALYST');`
+
+// write a query to display the list of employees, who are working in department 10 and 20 and earning more than 500.
+
+`$ select * from emp where deptno in (10,20) and sal>500;`
+
+// write a query to display the list of employees, who are working as clerk & salesman in department 20 and 30, whose salaries should be greater than 1500.
+
+`$ select * from emp where job in ('CLERK','SALESMAN') and deptno in (20,30) and sal>1500;`
+
+// write a query to display list of employees, who are not working in department 20 & 30.
+
+`$ select * from emp where deptno not in (20,30);`
+
+
+
 
 ## why are we using MYSQL ?
 - free and opensource

@@ -353,6 +353,22 @@ Some popular CNI plugins include:
 1. calico<br>2. Flannel<br>3. Weave Net<br>4.Cilium (uses eBPF)<br>5. Amazon VPC CNI (for AWS VPC)<Br>7. Azure CNI (for Azure virtual network) kubernetes networking is a big topic and it differs based on the hosting platforms.
 
 
+**Kubernetes cluster setup**
+
+As a DEVOPS engineer, gaining a thorough understanding of each component and cluster configuration is crucial configuration is crucial to work in production environments. Though there are various methods for deploying a kubernetes cluster, it is advisable to learn how to set up a multi-node clusters from scratch. This allows you to gain knowledge on concepts such as High Availability, Scaling, and Networking and simulates a real-world project.
+
+- Additionally , mastering the configuration of multi-node clusters can be beneficial for interviews and building confidence in your abilities. The following are the ways to establish a kubernetes cluster.
+
+In the following topics, we will look at kubernetes cluster setup and administration taks using kubeadm.
+
+**Kubeadm cluster Setup**
+- In this lab, we will look at the step-by-step to setup a kubernetes cluster using kubeadm with one master and two worker nodes.
+
+#### what is kubeadm ?
+
+Kubeadm is a tool to set up minimum viable kubernetes cluster without much complex configuration. Also, kubeadm makes the whole process easy by running a series of prechecks to ensure that the server has all the essential components and configs to run kubernetes.
+
+- it is developed and managed by the official kubernetes community. if you want to play around with the cluster
 
 
 
