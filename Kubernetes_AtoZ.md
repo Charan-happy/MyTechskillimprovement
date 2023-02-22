@@ -370,6 +370,9 @@ Kubeadm is a tool to set up minimum viable kubernetes cluster without much compl
 
 - it is developed and managed by the official kubernetes community. if you want to play around with the cluster
 
+kube adm
+
+
 
 
 
