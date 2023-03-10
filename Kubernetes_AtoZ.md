@@ -368,10 +368,16 @@ In the following topics, we will look at kubernetes cluster setup and administra
 
 Kubeadm is a tool to set up minimum viable kubernetes cluster without much complex configuration. Also, kubeadm makes the whole process easy by running a series of prechecks to ensure that the server has all the essential components and configs to run kubernetes.
 
-- it is developed and managed by the official kubernetes community. if you want to play around with the cluster
+- it is developed and managed by the official kubernetes community. if you want to play around with the cluster components or test utilities that are part of cluster administration, kubeadm is the best option. Also, we can create production like cluster locally on workstation for development and testing purposes.
 
-kube adm
+#### kubeadm setup prerequisites
 
+The following are the prerequisites for kubeadm kubernetes cluster setup.
+- 1. Minimum two ubuntu nodes [one master and one worker node]. you can have more worer nodes as per your requirement.
+- 2. The master node should have minimum 2 vcpu and 2 GB RAM<br>
+3. The worker node should have a minimum of 1 vcpu and 2 GB RAM is recommended<br>
+4. 10.x.x.x/x network range with static IPs for master and worker nodes. we will be using the 192.x.x.x series as the pod network range that will be used by the Calico network plugin.
+Make sure the node ip range and pod ip range do not overlap.<br>
 
 
 
